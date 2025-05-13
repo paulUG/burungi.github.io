@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:5500/sample.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fostering Self-esteam and empathy in young children</title>
+  <style>
+    /* Vibrant Color Palette */
+    :root {
+      --red: #FF9B2B;
+      --teal: #9ECDC1;
+      --yellow: #FFE88D;
+      --purple: #9B5DE5;
+      --pink: #F15BB5;
+      --green: #06D6A0;
+      --blue: #4CC9F0;
+      --orange: #FF9E00;
+      --dark: #292F36;
+      --light: #F7FFF7;
+    }
+    
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Header Section */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, var(--pink), var(--purple));
+      border-radius: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: white;
+      text-shadow: 3px 3px 0 var(--dark);
+      letter-spacing: 2px;
+    }
+    
+    .header-animals {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .header-animal {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      filter: drop-shadow(5px 5px 0 rgba(0,0,0,0.2));
+      transition: all 0.3s;
+    }
+    
+    .header-animal:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+    
+    /* Navigation */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .nav-tab {
+      background: linear-gradient(to bottom, var(--yellow), #FFD166);
+      color: var(--dark);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-family: 'Comic Neue', cursive;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 5px 0 #CCAA33;
+      transition: all 0.3s;
+    }
+    
+    .nav-tab:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 0 #CCAA33;
+    }
+    
+    .nav-tab.active {
+      background: linear-gradient(to bottom, var(--green), #04A57D);
+      color: white;
+      box-shadow: 0 5px 0 #038C6A;
+    }
+    
+    /* Activity Sections */
+    .activity-section {
+      display: none;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .activity-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .activity-card {
+      background: linear-gradient(to bottom, var(--light), #E8F4F8);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      border: 3px solid white;
+    }
+    
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .activity-card h3 {
+      color: var(--purple);
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    
+    .activity-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background-color: white;
+      padding: 10px;
+    }
+    
+    .activity-card p {
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+    
+    .activity-button {
+      background: linear-gradient(to bottom, var(--red), #FF8C8C);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: 'Comic Neue', cursive;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-top: 15px;
+      box-shadow: 0 4px 0 #CC5656;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    
+    .activity-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 0 #CC5656;
+    }
+    
+    /* Progress Tracking */
+    .progress-section {
+      background: linear-gradient(to right, var(--green), #04A57D);
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      color: white;
+      text-shadow: 1px 1px 0 var(--dark);
+    }
+    
+    .progress-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .progress-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .progress-icon {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .progress-label {
+      width: 150px;
+      font-weight: bold;
+    }
+    
+    .progress-track {
+      flex-grow: 1;
+      height: 20px;
+      background-color: rgba(255,255,255,0.3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, var(--yellow), #FFD166);
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+    
+    /* Drawing Canvas */
+    .drawing-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    #drawing-canvas {
+      background-color: white;
+      border: 3px solid var(--dark);
+      border-radius: 10px;
+      margin: 0 auto;
+      display: block;
+      touch-action: none;
+    }
+    
+    .drawing-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .color-button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .brush-button {
+      background: white;
+      border: 2px solid var(--dark);
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      75% { transform: rotate(-5deg); }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .header-animal {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-tab {
+        width: 80%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+  <link href="./Little Hands Learning Hub_files/css2" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header>
+      <h1>Fostering Self-esteam and empathy in young children</h1>
+      
+    </header>
+    
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showSection(&#39;gross-motor&#39;)">Interactive stories</button>
+      <button class="nav-tab" onclick="showSection(&#39;fine-motor&#39;)">Role playing games</button>
+      <button class="nav-tab" onclick="showSection(&#39;drawing&#39;)">Drawing Practice</button>
+    
+    </div>
+	<section id="gross-motor" class="activity-section active">
+      <h2>🏃 Interactive stories</h2>
+      <p>These interactive stories help evoke empathy in children.</p>
+      
+      <div class="activity-grid">
+	   <div class="activity-card">
+          <img src="./welsh.png" alt="Obstacle Course Activity">
+          <h3>The Fairies Harp</h3>
+          <p>The Fairies Harp - A Welsh Folktale.</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://kookykidsworld.com/fairies-harp-welsh-folktale/&#39;">Click to play</button>
+        </div>
+        
+        <div class="activity-card">
+          <img src="./jack.png" alt="Ball Activity">
+          <h3>Jack and the beanstalk</h3>
+          <p>Follow Jack's thrilling adventure as he climbs a magical beanstalk to a world above the clouds. A timeless tale of bravery, cleverness, and big surprises!</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://kookykidsworld.com/jack-and-the-beanstalk/&#39;">Click to play</button>
+        </div>
+        
+        <div class="activity-card">
+          <img src="./pigs.png" alt="Three pigs">
+          <h3>The Three Little Pigs</h3>
+          <p>The Three Little Pigs teaches that hard work and preparation pay off</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://kookykidsworld.com/three-little-pigs-fairy-tale/&#39;">Click to play</button>
+        </div>
+        
+        
+        
+       
+      </div>
+    </section>
+    
+    <!-- Fine Motor Skills Section -->
+    <section id="fine-motor" class="activity-section">
+      <h2>✋ Role playing games</h2>
+      <p>These activities help build self esteem in children through role playing games!</p>
+      
+      <div class="activity-grid">
+        <div class="activity-card">
+          <img src="./puppy.png" alt="Hopscotch Activity">
+          <h3> Puppy Ride</h3>
+          <p>This heroic hound is going on a joy ride through a really dangerous kingdom. That’s why he needs you to keep an eye on him. Can you help him drive safely while he dodges enemies and jumps over the gaps?</p>
+         
+          <button class="activity-button" onclick="window.location.href=&#39;https://www.girlsgogames.com/game/puppy-ride/&#39;">
+           Click to play
+        </button>
+        </div>
+        
+        <div class="activity-card">
+          <img src="./animal.png" alt="Balance Activity">
+          <h3>Animal Daycare</h3>
+          <p>Each one of these adorable animals has a condition that needs some quick attention in this online simulation game.</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://www.girlsgogames.com/game/animal-daycare/&#39;">Click to play</button>
+        </div>
+        
+          <div class="activity-card">
+          <img src="./puppyg.png" alt="Balance Activity">
+          <h3>Puppy groomer</h3>
+          <p>Puppy Groomer lets you care for adorable puppies with simple grooming tools. Wash and style various furry friends. Each level brings new challenges, keeping you on your toes and enhancing your grooming skills. Delight in the cuteness as you meet each pet’s needs while managing your time efficiently..</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://now.us/apps/playtouch/51178/become-a-puppy-groomer.html/&#39;">Click to play</button>
+        </div>
+		
+		 <div class="activity-card">
+          <img src="./cake.png" alt="Balance Activity">
+          <h3>Cake Shop Bakery</h3>
+          <p>An enchanted kingdom filled with candy and desserts is where this food truck is heading next! You can join the delightful baker who’s in the driver’s seat in this magical online cooking game. Can you help him make some awesome cakes and more for all of his customers as he continues his trek? You can also collect awesome daily bonuses along the way..</p>
+          <button class="activity-button" onclick="window.location.href=&#39;https://www.girlsgogames.com/game/cake-shop-bakery/&#39;">Click to play</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gross Motor Skills Section -->
+    
+    
+    <!-- Drawing Practice Section -->
+    <section id="drawing" class="activity-section">
+      <h2>🎨 Drawing Practice</h2>
+      <p>Practice holding pencils and drawing different shapes and lines to prepare for writing!</p>
+      
+      <div class="drawing-container">
+        <h3>Drawing Canvas</h3>
+        <p>Use your finger or mouse to draw in the space below. Try to copy the shapes shown!</p>
+        
+        <canvas id="drawing-canvas" width="600" height="400"></canvas>
+        
+        <div class="drawing-controls">
+          <div>
+            <p>Colors:</p>
+            <div style="display: flex; gap: 5px;">
+              <div class="color-button" style="background-color: #FF6B6B;" onclick="setColor(&#39;#FF6B6B&#39;)"></div>
+              <div class="color-button" style="background-color: #4ECDC4;" onclick="setColor(&#39;#4ECDC4&#39;)"></div>
+              <div class="color-button" style="background-color: #FFE66D;" onclick="setColor(&#39;#FFE66D&#39;)"></div>
+              <div class="color-button" style="background-color: #9B5DE5;" onclick="setColor(&#39;#9B5DE5&#39;)"></div>
+              <div class="color-button" style="background-color: #292F36;" onclick="setColor(&#39;#292F36&#39;)"></div>
+            </div>
+          </div>
+          
+          <div>
+            <p>Brush Size:</p>
+            <button class="brush-button" onclick="setBrushSize(5)">Small</button>
+            <button class="brush-button" onclick="setBrushSize(10)">Medium</button>
+            <button class="brush-button" onclick="setBrushSize(20)">Large</button>
+          </div>
+          
+          <button class="activity-button" onclick="clearCanvas()">Clear Drawing</button>
+        </div>
+        
+        <h3 style="margin-top: 30px;">Try Drawing These:</h3>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+          <div style="text-align: center;">
+            <img src="./hand.png" style="width: 100px; height: 100px; object-fit: contain; background: white; padding: 10px; border-radius: 10px;">
+            <p>Straight Lines</p>
+          </div>
+          <div style="text-align: center;">
+            <img src="./circle.png" style="width: 100px; height: 100px; object-fit: contain; background: white; padding: 10px; border-radius: 10px;">
+            <p>Circles</p>
+          </div>
+          <div style="text-align: center;">
+            <img src="./square.png" style="width: 100px; height: 100px; object-fit: contain; background: white; padding: 10px; border-radius: 10px;">
+            <p>Squares</p>
+          </div>
+          <div style="text-align: center;">
+            <img src="./triangle.jpg" style="width: 100px; height: 100px; object-fit: contain; background: white; padding: 10px; border-radius: 10px;">
+            <p>Triangles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Progress Tracking Section -->
+    
+  </div>
+
+  <script>
+    // Game State
+    let gameState = {
+      progress: {
+        pencilGrip: 0,
+        cutting: 0,
+        balance: 0,
+        coordination: 0,
+        drawing: 0
+      },
+      completedActivities: []
+    };
+    
+    // Drawing Canvas Variables
+    let canvas, ctx;
+    let isDrawing = false;
+    let currentColor = '#292F36';
+    let brushSize = 10;
+    
+    // Initialize the page
+    window.onload = function() {
+      // Load saved progress
+      const savedProgress = localStorage.getItem('motorSkillsProgress');
+      if (savedProgress) {
+        gameState = JSON.parse(savedProgress);
+        updateProgressBars();
+      }
+      
+      // Set up drawing canvas
+      canvas = document.getElementById('drawing-canvas');
+      ctx = canvas.getContext('2d');
+      
+      // Set canvas background to white
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Set up event listeners for drawing
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseout', stopDrawing);
+      
+      // Touch support for mobile devices
+      canvas.addEventListener('touchstart', handleTouchStart);
+      canvas.addEventListener('touchmove', handleTouchMove);
+      canvas.addEventListener('touchend', handleTouchEnd);
+    };
+    
+    // Show different sections
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.activity-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Deactivate all tabs
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Show selected section
+      document.getElementById(sectionId).classList.add('active');
+      
+      // Activate clicked tab
+      event.target.classList.add('active');
+    }
+    
+    // Start an activity
+    function startActivity(activity) {
+      let message = '';
+      let progressUpdate = {};
+      
+      switch(activity) {
+        case 'coloring':
+          message = 'Great job coloring! Remember to hold your crayon with three fingers.';
+          progressUpdate = { pencilGrip: 10 };
+          break;
+        case 'puzzle':
+          message = 'Awesome puzzle solving! This helps your fingers work together.';
+          progressUpdate = { coordination: 10 };
+          break;
+        case 'beading':
+          message = 'Excellent bead threading! This makes your fingers strong.';
+          progressUpdate = { coordination: 15 };
+          break;
+        case 'cutting':
+          message = 'Nice cutting! Keep practicing opening and closing the scissors.';
+          progressUpdate = { cutting: 15 };
+          break;
+        case 'dot-to-dot':
+          message = 'Wonderful connecting! This helps with pencil control.';
+          progressUpdate = { pencilGrip: 15 };
+          break;
+        case 'playdough':
+          message = 'Fun with playdough! Squeezing and rolling builds hand muscles.';
+          progressUpdate = { pencilGrip: 10, coordination: 10 };
+          break;
+        case 'hopscotch':
+          message = 'Super hopping! This helps with balance and coordination.';
+          progressUpdate = { balance: 15, coordination: 10 };
+          break;
+        case 'balance':
+          message = 'Excellent balancing! Try to walk slowly and steadily.';
+          progressUpdate = { balance: 20 };
+          break;
+        case 'obstacle':
+          message = 'Great obstacle course! Moving in different ways is good exercise.';
+          progressUpdate = { balance: 15, coordination: 15 };
+          break;
+        case 'ball':
+          message = 'Nice ball skills! Throwing and catching helps coordination.';
+          progressUpdate = { coordination: 20 };
+          break;
+        case 'dance':
+          message = 'Fantastic dancing! Moving to music helps rhythm and coordination.';
+          progressUpdate = { balance: 10, coordination: 15 };
+          break;
+        case 'simon':
+          message = 'Super listening! Following directions helps body control.';
+          progressUpdate = { balance: 10, coordination: 10 };
+          break;
+      }
+      
+      // Update progress
+      for (const skill in progressUpdate) {
+        gameState.progress[skill] = Math.min(100, gameState.progress[skill] + progressUpdate[skill]);
+      }
+      
+      // Mark activity as completed if not already
+      if (!gameState.completedActivities.includes(activity)) {
+        gameState.completedActivities.push(activity);
+      }
+      
+      // Save progress
+      localStorage.setItem('motorSkillsProgress', JSON.stringify(gameState));
+      
+      // Update progress bars
+      updateProgressBars();
+      
+      // Show completion message
+      alert('🎉 ' + message);
+    }
+    
+    // Update progress bars
+    function updateProgressBars() {
+      document.getElementById('pencil-grip-progress').style.width = gameState.progress.pencilGrip + '%';
+      document.getElementById('cutting-progress').style.width = gameState.progress.cutting + '%';
+      document.getElementById('balance-progress').style.width = gameState.progress.balance + '%';
+      document.getElementById('coordination-progress').style.width = gameState.progress.coordination + '%';
+      document.getElementById('drawing-progress').style.width = gameState.progress.drawing + '%';
+    }
+    
+    // Drawing functions
+    function startDrawing(e) {
+      isDrawing = true;
+      draw(e);
+    }
+    
+    function draw(e) {
+      if (!isDrawing) return;
+      
+      ctx.lineWidth = brushSize;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = currentColor;
+      
+      // Get mouse position
+      let x, y;
+      if (e.type.includes('touch')) {
+        const rect = canvas.getBoundingClientRect();
+        x = e.touches[0].clientX - rect.left;
+        y = e.touches[0].clientY - rect.top;
+      } else {
+        x = e.offsetX;
+        y = e.offsetY;
+      }
+      
+      // Draw line
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      
+      // Update drawing progress
+      gameState.progress.drawing = Math.min(100, gameState.progress.drawing + 0.1);
+      updateProgressBars();
+      localStorage.setItem('motorSkillsProgress', JSON.stringify(gameState));
+    }
+    
+    function stopDrawing() {
+      isDrawing = false;
+      ctx.beginPath();
+    }
+    
+    // Touch handlers
+    function handleTouchStart(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent('mousedown', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }
+    
+    function handleTouchMove(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent('mousemove', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }
+    
+    function handleTouchEnd(e) {
+      e.preventDefault();
+      const mouseEvent = new MouseEvent('mouseup', {});
+      canvas.dispatchEvent(mouseEvent);
+    }
+    
+    // Set drawing color
+    function setColor(color) {
+      currentColor = color;
+    }
+    
+    // Set brush size
+    function setBrushSize(size) {
+      brushSize = size;
+    }
+    
+    // Clear canvas
+    function clearCanvas() {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    
+    // Print certificate
+    //'https://gameforge.com/en-US/littlegames/baby-hazel-ballerina-dance
+    function printCertificate() {
+      // Create a printable certificate
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`
+  
+      `);
+      printWindow.document.close();
+    }
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
